@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+message TodoRequest {
+  string title = 1;
+  string description = 2;
+  bool isCompleted = 3;
+  google.protobuf.Timestamp createdAt = 4;
+}
+
+message TodoResponse {
+  string id = 1;
+}
+
+service TodoService {
+    rpc CreateTodo(TodoRequest) returns (TodoResponse);
+}
