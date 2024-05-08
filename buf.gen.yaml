@@ -3,6 +3,9 @@ managed:
   enabled: true
   go_package_prefix:
     default: nodamu/grpc-template
+    except:
+      - buf.build/googleapis/googleapis
+
 plugins:
   - name: go
     out: .

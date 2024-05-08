@@ -10,5 +10,5 @@ type TodoService interface {
 }
 
 type TodoRepository interface {
-	CreateTodo(ctx context.Context, todo *domain.Todo) error
+	SaveTodo(ctx context.Context, todo *domain.Todo) (string, error)
 }
