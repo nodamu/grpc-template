@@ -10,10 +10,10 @@ type TodoService struct {
 	todoRepository ports.TodoRepository
 }
 
-func (t TodoService) CreateTodo(ctx context.Context, todo *domain.Todo) (string, error) {
-	id, err := t.todoRepository.CreateTodo(ctx, todo)
+func (t TodoService) CreateTodo(ctx context.Context, todo *domain.Todo) error {
+	err := t.todoRepository.CreateTodo(ctx, todo)
 	if err != nil {
-		return "", err
+		return err
 	}
-	return id, nil
+	return nil
 }
